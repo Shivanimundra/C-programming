@@ -1,0 +1,37 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <math.h>
+int i=0,ar[100],sum=0;
+
+
+char* palindrome(int n)
+{
+   static char str[100]="NUMBER IS PALINDROME";
+    int x=n;
+    while(n)
+    {
+        ar[i]=n%10;
+        n=n/10;
+         i++;
+    }
+    for(int j=0;j<i;j++)
+    {
+      sum=sum+ar[j]*pow(10,(i-j-1));
+    }
+    if(sum==x)
+    {
+        return str;
+    }
+}
+int main()
+{
+    printf("%s",palindrome(10001));
+    return 0;
+}

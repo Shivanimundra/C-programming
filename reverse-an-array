@@ -1,0 +1,31 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+int a[]={1,2,0,4,5};
+int i=0,x,ar_length;
+int main()
+{
+   ar_length=sizeof(a)/sizeof(a[0]);
+   
+    
+        while(i<(ar_length/2))
+        {
+           
+           x=a[ar_length-i-1]; 
+           a[ar_length-i-1]=a[i];
+           a[i]=x;
+           i++;
+        }
+      for(int j=0;j<ar_length;j++)
+      {
+          printf("%d\n",a[j]);
+      }
+
+    return 0;
+}

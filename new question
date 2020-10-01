@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include <string.h>
+int b = 0, c = 0, s = 0;
+char a;
+int j = 0;
+int
+main ()
+{
+   char string[50] = "BeaD-bluE-greeN-orAnge-white";
+   char *token = strtok (string, "-");      	// extract the string from hyphen
+  while (token != NULL)
+ {
+      for (int i = 0; i < strlen (token); i++)
+	{
+	  if (token[i] < 97)                     	// if there is any upper case letter
+	    {
+	      token[i] = token[i] + 32;          	// converting all the letter into lower case
+	    }
+	}
+      for (int i = 0; i < strlen (token); i++)
+	{
+	  c = c + token[i];
+	  if (c % 2 == 0)                            	// sum of string is even number
+	    {
+    	      for (i = 0; i < strlen (token); i++)	// sorting the string in asscending order
+    		{
+    
+    		  for (j = i + 1; j < strlen (token); j++)
+    		    {
+        
+        		      if (token[i] > token[j])
+        			{
+        
+        			  a = token[i];
+        			  token[i] = token[j];
+        			  token[j] = a;
+        
+        			}
+    
+    		    }
+    		}
+        	      for (i = 0; i < strlen (token); i++)
+        		{
+        		  printf ("%c", token[i]);
+        		}
+	    }
+	  else
+	    {
+    	      for (i = 0; i < strlen (token); i++)	// sum of string is odd number then sorting 
+    	                                        	// into descending order
+    		{
+    		  for (j = i + 1; j < strlen (token); j++)
+    		    {
+        		      if (token[i] < token[j])
+        			{
+        			  a = token[i];
+        			  token[i] = token[j];
+        			  token[j] = a;
+        			}
+    		    }
+    		}
+    	      for (i = 0; i < strlen (token); i++)
+    		{
+    		  printf ("%c", token[i]);
+    		}
+
+	    }
+	 }
+           printf ("%c", 45);
+           token = strtok (NULL, "-");
+
+    }
+  return 0;
+}
+

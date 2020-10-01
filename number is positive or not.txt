@@ -1,0 +1,27 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+int n;
+int main()
+{
+    scanf("%d",&n);
+    int a = sizeof(n)*8;
+      n>>=a-1;
+            
+    if((n&1)==0)
+    {
+        printf("number is positive");
+    }
+    else
+    {
+        printf("number is negative");
+    }
+    return 0;
+}

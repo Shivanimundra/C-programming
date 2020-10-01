@@ -1,0 +1,44 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+int ar[3][3]={1,0,0,0,1,0,0,0,1};
+int new[3][3]={1,0,0,0,0,0,0,0,1};
+int c;
+int main()
+{
+    for(int j=0;j<3;j++)
+    {
+       for(int i=0;i<3;i++)
+      {
+          ar[j][i]=new[i][j];
+          
+          if(ar[j][i]*new[j][i]!=1&&i==j)
+          {
+            printf("Not orthonormal");
+            c=1;
+            break;
+          }
+          if(ar[j][i]*new[j][i]!=0&&i!=j&&c!=1)
+          {
+              printf("Not orthonormal");
+              c=2;
+              break;
+          }
+      }
+      if(c)
+      {
+        break;
+      }
+    }
+      if(c==0)
+      {
+          printf("orthonormal");
+      }
+    return 0;
+}

@@ -1,0 +1,22 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+int n,a=5,b=6;
+float x=2.3,y=1.0;
+char c='a';
+int main()
+{
+    scanf("%d",&n);
+    printf("An integer Entered by user= %d\n",n);
+    printf("addition of a and b is= %d\n",a+b);
+    printf("multiplication of two floating point number is = %f\n",x*y);
+    printf("Ascii value of %c character is = %d\n",c,c);
+    printf("quotient is = %d and remainder is = %d\n",a/b,a%b);
+    return 0;
+}

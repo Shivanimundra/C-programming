@@ -1,0 +1,19 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+float r,v,h;
+int main()
+{
+     scanf("%f",&r);  // enter the radius
+     scanf("%f",&v); // enter the volume
+     h = (v/(3.14*r*r));  // volume of spherical tank is v=3.14*r*r*h  
+     printf("depth of the tank is = %f",h);
+
+    return 0;
+}

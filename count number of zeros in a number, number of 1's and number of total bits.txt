@@ -1,0 +1,36 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h> 
+#include<stdlib.h> 
+int n,a=0,count=0,b;
+int main() 
+{ 
+    scanf("%d",&n);
+    b=n;
+    while(b)
+    {
+        count++;
+        b/=2;
+    }
+    
+    while(n)
+    {
+        if(n&1==1)
+        {
+           a++;    
+        }
+        n=n>>1;      
+    }
+    printf("total number of bits in a number = %d\n",count);
+    printf("number of 1's in a number = %d\n",a);
+    printf("number of zero's in a number = %d",count-a);
+    return 0;   
+}
+        
+

@@ -1,0 +1,36 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <stdio.h>
+int a[3][3]={1,0,0,0,1,0,0,0,1};
+int b[3][3]={1,0,0,0,1,0,0,0,1};;
+int n[3][3];
+int sum=0,k=0,i=0;
+int main()
+{
+    for(k=0;k<3;k++)
+    {
+      for( i=0;i<3;i++)
+      {
+        for(int j=0;j<3;j++)
+        {
+            sum=sum+(a[k][j])*(b[j][i]);
+        }
+        n[k][i]=sum;
+        sum=0;
+      }
+    }
+    for(int p=0;p<3;p++)
+    {
+        for(int q=0;q<3;q++)
+        {
+          printf("%d\n",n[p][q]);
+        }
+    }
+    return 0;
+}
