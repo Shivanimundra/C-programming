@@ -15,7 +15,7 @@ int main()
         printf("no.is divisibe by 4");
         break;
       }
-       n=n-4;                                 keep subtracting 4 from n if n becomes zero that means it is divisible by 4.
+       n=n-4;                                 //keep subtracting 4 from n if n becomes zero that means it is divisible by 4.
        
     }
     if(n<0)
