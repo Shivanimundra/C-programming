@@ -1,24 +1,21 @@
 /******************************************************************************
 
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
-C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
-Code, Compile, Run and Debug online from anywhere in world.
+CHECK NO. IS DIVISIBLE BY 4 OR NOT WITHOUT USING MODULO OPERATOR
 
 *******************************************************************************/
 #include <stdio.h>
 int n;
 int main()
 {
-    scanf("%d",&n);
-    while(n>0)
+    scanf("%d",&n);                            // enter the number
+    while(n>0)                                // if no. is positive
     {
-      if(n==0)
+      if(n==0)                               
       {
         printf("no.is divisibe by 4");
         break;
       }
-       n=n-4; 
+       n=n-4;                                 keep subtracting 4 from n if n becomes zero that means it is divisible by 4.
        
     }
     if(n<0)
