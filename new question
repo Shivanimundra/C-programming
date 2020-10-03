@@ -1,12 +1,22 @@
+
 #include<stdio.h>
 #include <string.h>
-int b = 0, c = 0, s = 0;
-char a;
+int x=0,c=0,a=0;
+int count;
 int j = 0;
 int
 main ()
 {
    char string[50] = "BeaD-bluE-greeN-orAnge-white";
+   
+   while(string[x]!='\0')
+   {
+       if(string[x]=='-')
+       {
+           count++;               // count the number of hyphen
+       }
+       x++;
+   }
    char *token = strtok (string, "-");      	// extract the string from hyphen
   while (token != NULL)
  {
@@ -59,16 +69,16 @@ main ()
         			}
     		    }
     		}
-    	      for (i = 0; i < strlen (token); i++)
-    		{
-    		  printf ("%c", token[i]);
-    		}
-
+    		   printf ("%s", token);
 	    }
 	 }
-           printf ("%c", 45);
+	         if(count!=0)
+	         {
+	             printf ("%c", 45);          // print hyphen after each substrings except the last substring
+	             count--;
+	         }
+             
            token = strtok (NULL, "-");
-
     }
   return 0;
 }
