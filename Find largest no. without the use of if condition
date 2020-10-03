@@ -1,0 +1,17 @@
+/******************************************************************************
+C program to find out largest number without the use if condition.
+
+*******************************************************************************/
+#include <stdio.h>
+int a,b;
+int main()
+{
+    printf("enter the two numbers= ");
+    scanf("%d",&a);
+    scanf("%d",&b);
+    int x=a-b;
+    int last_bit=((x>>31)&1);   // get the last bit 
+    int largest = a-(last_bit*(a-b)); // a-last_bit*(a-b).....if last_bit is zero(x is positive) then largest will be 'a' else 'b'
+    printf("%d",largest);
+    return 0;
+}
