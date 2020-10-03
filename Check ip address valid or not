@@ -29,7 +29,7 @@ int main() {
            {
               case 1:
                         c= (token[t+l-1]-48);     // if there is one non-zero character 
-                                                 //then store that character(number) in variable c
+                                                  //then store that character(number) in variable c
                         break;
                     
               case 2:
@@ -44,14 +44,14 @@ int main() {
                         c= b+(token[t+l+1]-48);     // and stor it in c;
                         break;                
            }  
-       if(c<=255)        // c is less than 255 or not for valid ip address
+       if(c<=255)                                  // c is less than 255 or not for valid ip address
       {
-          count++;        // check for all the substrings
+          count++;                                // check for all the substrings
           a=b=c=t=0;
       }
-      token = strtok(NULL, ".");    //extract the next substrings
+      token = strtok(NULL, ".");                 //extract the next substrings
    }
-   if(count==4)                    // if c<255 for all the substrings then ip address is valid
+   if(count==4)                                 // if c<255 for all the substrings then ip address is valid
    {
      count=0;  
      printf("valid ip address");
