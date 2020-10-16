@@ -1,0 +1,27 @@
+
+#include <stdio.h>
+void rotate(int* nums, int numsSize, int k)
+{
+    static int x;
+    int num1[numsSize];
+    for(int i=0;i<numsSize;i++)
+    {
+        x=k+i;               //3,4
+        if(x>=numsSize)
+        {
+            x=(x-numsSize);
+        }
+        num1[x]=nums[i];      //3=0, 4=1,5=2,6=3,7=4,0=5 and so on....
+    }
+    for(int j=0;j<numsSize;j++)
+    {
+        printf("%d\n",num1[j]);      
+    }
+}
+int main()
+{
+    int a[]={1,2,3,4,5,6,7,8};
+    int *p=a;
+    rotate(p,8,3);
+    return 0;
+}
