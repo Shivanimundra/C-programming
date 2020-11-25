@@ -8,9 +8,10 @@ int count=0;
 static int t=0;
 int a=0,b=0,c=0;
 int main() {
-   char string[50] = "000000000002576.255.32.0000000000000000";
+   char string[50] = "00254.255.32.0000000000000000";
+   
    // Extract the first token
-   char * token = strtok(string, ".");              // Extract the string from '.'
+   char *token = strtok(string, ".");              // Extract the string from '.'
    
    while( token != NULL )
    {
@@ -31,22 +32,22 @@ int main() {
                        c=0;
                        break;
               case 1:
-                        c= (token[t+l-1]-48);     // if there is one non-zero character 
+                        c= (token[t]-48);     // if there is one non-zero character 
                                                   //then store that character(number) in variable c
                         break;
                     
               case 2:
-                        b = (token[t+l-1]-48)*10;   // if there are two non-zero character 
+                        b = (token[t]-48)*10;   // if there are two non-zero character 
                                                     //then store the 1st character(number)...(and multiply by 10)in variable b
-                        c= b+(token[t+l]-48);       // add the next non-zero character in b then store the sum in c
+                        c= b+(token[t+1]-48);       // add the next non-zero character in b then store the sum in c
                         break;
               case 3:
-                        a = (token[t+l-1]-48)*100;  //if there are three non-zero character   
-                        b = a+(token[t+l]-48)*10;   // then multiply 1st char by 100 and
+                        a = (token[t]-48)*100;  //if there are three non-zero character   
+                        b = a+(token[t+1]-48)*10;   // then multiply 1st char by 100 and
                                                     // 2nd by 10 and add those three character
-                        c= b+(token[t+l+1]-48);     // and stor it in c;
+                        c= b+(token[t+2]-48);     // and stor it in c;
                         break;  
-                default:                            // for any other case(except 0,1,2,3) 
+              default:                            // for any other case(except 0,1,2,3) 
                         c=300;                      // assigning random value greater than 255 for invalid ip
            }  
        if(c<=255)                                  // c is less than 255 or not for valid ip address
