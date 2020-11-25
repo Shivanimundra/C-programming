@@ -8,7 +8,7 @@ int count=0;
 static int t=0;
 int a=0,b=0,c=0;
 int main() {
-   char string[50] = "0000000000000000000.255.32.0000000000000000";
+   char string[50] = "000000000002576.255.32.0000000000000000";
    // Extract the first token
    char * token = strtok(string, ".");              // Extract the string from '.'
    
@@ -27,6 +27,9 @@ int main() {
          
              switch(l)
            {
+              case 0:
+                       c=0;
+                       break;
               case 1:
                         c= (token[t+l-1]-48);     // if there is one non-zero character 
                                                   //then store that character(number) in variable c
@@ -42,7 +45,9 @@ int main() {
                         b = a+(token[t+l]-48)*10;   // then multiply 1st char by 100 and
                                                     // 2nd by 10 and add those three character
                         c= b+(token[t+l+1]-48);     // and stor it in c;
-                        break;                
+                        break;  
+                default:                            // for any other case(except 0,1,2,3) 
+                        c=300;                      // assigning random value greater than 255 for invalid ip
            }  
        if(c<=255)                                  // c is less than 255 or not for valid ip address
       {
@@ -62,5 +67,3 @@ int main() {
    }
    return 0;
 }
-
-
